@@ -1,5 +1,7 @@
 $(document)
     .ready(function() {
+    $('.ui.sidebar')
+  .sidebar('toggle');
       $('.ui.form')
         .form({
           fields: {
