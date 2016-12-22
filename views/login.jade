@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  .ui.middle.aligned.center.aligned.grid
+    .column
+        h2.ui.teal.header
+            .content Log-in to your account
+        form.ui.large.form(method='POST')
+            .ui.stacked.segment
+                .field
+                    .ui.left.input
+                        input(type="text", name="email", placeholder="E-mail address")
+                .field
+                    .ui.left.input
+                        input(type="password",  name="password", placeholder="Password")
+                .ui.fluid.large.teal.submit.button Login  
+            .ui.error.message
