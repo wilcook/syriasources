@@ -4,7 +4,7 @@ var Sequelize = require("sequelize");
 // sequelize (lowercase) references my connection to the DB.  
 var sequelize = require("../config/connection.js");
 
-var Sources = sequelize.define("Sources", {
+var sources = sequelize.define("sources", {
     source_id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
@@ -15,7 +15,7 @@ var Sources = sequelize.define("Sources", {
         defaultValue: Sequelize.NOW,
         allowNull: false
     },
-    admin_id: Sequelize.STRING,
+    user_id: Sequelize.STRING,
     source_name: Sequelize.STRING,
     source_description: Sequelize.TEXT,
     source_url: Sequelize.STRING,
@@ -31,12 +31,13 @@ var Sources = sequelize.define("Sources", {
     not_trusted: Sequelize.BOOLEAN,
     reports: Sequelize.BOOLEAN,
     solidarity: Sequelize.BOOLEAN,
+    start: Sequelize.BOOLEAN,
     video_clips: Sequelize.BOOLEAN
 }, {
     timestamps: true
 });
 
 // Sync with DB
-Sources.sync();
+sources.sync();
 
-module.exports = Sources;
+module.exports = sources;
